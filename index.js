@@ -1,5 +1,5 @@
 import { AppRegistry } from 'react-native';
-import App2 from './App';
+
 import App from './src/utils/App';
 import { YellowBox } from 'react-native';
 

@@ -4,6 +4,8 @@ import android.Manifest;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
+import com.reactcommunity.rnlanguages.RNLanguagesPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.rt2zz.reactnativecontacts.ReactNativeContacts;
 import com.wscodelabs.callLogs.CallLogPackage;
@@ -15,6 +17,7 @@ import com.facebook.soloader.SoLoader;
 import java.util.Arrays;
 import java.util.List;
 
+import libs.contact.ContactPackage;
 import libs.location.LocationPackage;
 
 public class MainApplication extends Application implements ReactApplication {
@@ -29,10 +32,13 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNI18nPackage(),
+            new RNLanguagesPackage(),
             new MapsPackage(),
             new ReactNativeContacts(),
             new CallLogPackage(),
-              new LocationPackage()
+              new LocationPackage(),
+              new ContactPackage()
       );
     }
 

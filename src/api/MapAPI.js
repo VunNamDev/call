@@ -28,13 +28,13 @@ export const randomLocation = location => {
       location.lat +
       ',' +
       location.lng +
-      '&radius=10000&key=AIzaSyCYLQqvp2JWF9wofBJbQ_NfJLBZerNM3yA';
-    console.log(url);
+      '&radius=5000&key=AIzaSyCYLQqvp2JWF9wofBJbQ_NfJLBZerNM3yA';
+
     return Alamofire.request(url, 'GET', {})
       .then(response => {
         let idx = 0;
         idx = Math.floor(Math.random() * (response.results.length - 1));
-        console.log(response);
+        console.log(url, idx);
         resolve(response.results[idx].geometry.location);
       })
       .catch(err => reject(err));

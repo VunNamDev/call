@@ -1,4 +1,0 @@
-#Tue Sep 04 15:59:23 ICT 2018
-base.0=D\:\\AIB\\call\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\7
-renamed.0=classes.dex
-file.0=D\:\\AIB\\call\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\7\\classes.dex

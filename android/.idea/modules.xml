@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/call.iml" filepath="$PROJECT_DIR$/call.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-call-log/android/react-native-call-log.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-call-log/android/react-native-call-log.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-contacts/android/react-native-contacts.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-contacts/android/react-native-contacts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-i18n/android/react-native-i18n.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-i18n/android/react-native-i18n.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-languages/android/react-native-languages.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-languages/android/react-native-languages.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-maps/lib/android/react-native-maps.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-maps/lib/android/react-native-maps.iml" />
     </modules>
   </component>

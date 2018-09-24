@@ -11,6 +11,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/../node_modules/react-native-call-log/android" />
             <option value="$PROJECT_DIR$/../node_modules/react-native-contacts/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-i18n/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-languages/android" />
             <option value="$PROJECT_DIR$/../node_modules/react-native-maps/lib/android" />
           </set>
         </option>

@@ -15,9 +15,9 @@ import {
 } from 'react-native';
 
 import React, { Component } from 'react';
-import LocationScreen from '../screens/location_screen/LocationContainer';
-import MenuScreen from '../screens/menu_screen/MenuContainer';
-import SearchScreen from '../screens/search_screen/SearchContainer';
+import LocationScreen from '../screens/locationScreen/LocationContainer';
+import MenuScreen from '../screens/menuScreen/MenuContainer';
+import SearchScreen from '../screens/searchScreen/SearchContainer';
 export default TabNavigator(
   {
     SearchScreen: {

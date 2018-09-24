@@ -56,6 +56,11 @@ public class LocationModule extends ReactContextBaseJavaModule {
                 Address returnedAddress = addresses.get(0);
                 String featureName = returnedAddress.getFeatureName();
 
+                String thoroughfare = returnedAddress.getThoroughfare();
+                if (thoroughfare != null && !thoroughfare.isEmpty()) {
+                    addrs += returnedAddress.getThoroughfare() + ", ";
+                }
+
                 String subAdminArea = returnedAddress.getSubAdminArea();
                 if (subAdminArea != null && !subAdminArea.isEmpty()) {
                     addrs += returnedAddress.getSubAdminArea() + ", ";

@@ -21,7 +21,6 @@ export const Search = (countryCode, q) => {
 
     return Alamofire.request(url, 'GET', {}, { Authorization: 'Bearer ' + hash })
       .then(response => {
-        console.log(response);
         verifyCode(response)
           .then(res => resolve(res))
           .catch(err => reject(err));

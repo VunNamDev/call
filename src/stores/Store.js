@@ -38,7 +38,6 @@ class Store {
   @action
   changeLocation = loc => {
     this.location = loc;
-    console.log(loc);
   };
   @observable
   arrContact = [];
@@ -52,7 +51,6 @@ class Store {
       if (values.title == title) {
         if (values.data[index].location == '') {
           this.arrContact[i].data[index].location = { place, ...location };
-          console.log(this.arrContact[i]);
         }
       }
     });
@@ -67,13 +65,10 @@ class Store {
   fakeLocationCallLog = (location, title, index, place) => {
     this.arrCallLog.map((values, i) => {
       if (values.title == title) {
-        console.log(JSON.stringify(values.data[index].location));
         if (values.data[index].location == '') {
           this.arrCallLog[i].data[index].location = { place, ...location };
         }
       }
-
-      console.log('xxxx');
     });
   };
 }

@@ -138,6 +138,9 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-i18n')
+
+    compile project(':react-native-languages')
     compile project(':react-native-maps')
 
     compile "com.google.android.gms:play-services-base:10.2.4"

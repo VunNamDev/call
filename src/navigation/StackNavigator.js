@@ -1,10 +1,10 @@
 import { createStackNavigator } from 'react-navigation';
 
-import SearchInforScreen from '../screens/search_infor_screen/SearchInforContainer';
+import SearchInforScreen from '../screens/searchInforScreen/SearchInforContainer';
 import TabNavigator from './TabNavigator';
-import ContactInforScreen from '../screens/contact_infor_screen/ContactInforContainer';
-import MyMapScreen from '../screens/map_screen/MyMapContainer';
-import CallLogScreen from '../screens/calllog_screen/CallLogContainer';
+import ContactInforScreen from '../screens/contactInforScreen/ContactInforContainer';
+import MyMapScreen from '../screens/mapScreen/MyMapContainer';
+import CallLogScreen from '../screens/calllogScreen/CallLogContainer';
 const StackNavigator = createStackNavigator({
   TabNavigator: {
     screen: TabNavigator,
