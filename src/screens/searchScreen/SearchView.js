@@ -161,7 +161,7 @@ export default class SearchView extends Component {
                 } else {
                   Search(this.props.store.countryCode, this.number)
                     .then(val => {
-                      // alert(JSON.stringify(val));
+                      alert(JSON.stringify(val));
                       this.props.store.addToArrSearchHistory({
                         title: moment(Date.now()).format('DD/MM/YYYY'),
                         data: [{ ...val, time: moment(Date.now()).format('HH:mm') }]

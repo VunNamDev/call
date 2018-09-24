@@ -128,7 +128,7 @@ export default class CallLogView extends Component {
               }}
             />
           </TouchableOpacity>
-          <Text style={{ color: '#FFF', fontSize: 20, fontWeight: 'bold' }}>{I18n.t('locationCheck')}</Text>
+          <Text style={{ color: '#FFF', fontSize: 20, fontWeight: 'bold' }}>{I18n.t('locationChecker')}</Text>
         </View>
         <View style={{ alignItems: 'center', width: width - 20, flex: 1 }}>
           <View
