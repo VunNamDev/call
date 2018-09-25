@@ -29,6 +29,7 @@ import { randomLocation } from '../../api/MapAPI';
 import { LocationModule } from '../../libs/Modul';
 import { checkInList } from '../../components/CheckInList';
 import { getData } from '../../asset/data/mobileNumberfinder';
+import styles from './styles';
 
 const { width, height } = Dimensions.get('window');
 class Item extends Component {
@@ -85,56 +86,25 @@ export default class SearchView extends Component {
   render() {
     // randomLocation(-33.8670522, 151.1957362);
     // alert(moment(Date.now()).format('HH:mm'));
-    // Search('VN', '01694744534').then(val => {
-    //   console.log(val);
-    // });
+    Search('VN', '113')
+      .then(val => {
+        console.log(val);
+      })
+      .catch(ex => {
+        console.log(ex);
+      });
 
     const data = JSON.stringify(this.props.store.arrSearchHistory);
     return (
-      <View style={{ flex: 1, backgroundColor: '#FAFAFA', alignItems: 'center' }}>
-        <View
-          style={{
-            position: 'absolute',
-            width: 3 * width,
-            height: 3 * width,
-            borderRadius: 3 * width,
-            left: -width,
-            backgroundColor: '#D0011B',
-            top: -(3 * width - 140)
-          }}
-        />
-        <View style={{ height: 40, width: width, alignItems: 'center', marginTop: 50 }}>
-          <Text style={{ color: '#FFF', fontSize: 20, fontWeight: 'bold' }}>{I18n.t('numberChecker')}</Text>
+      <View style={styles.container}>
+        <View style={styles.positionView} />
+        <View style={styles.inforView}>
+          <Text style={styles.title}>{I18n.t('numberChecker')}</Text>
         </View>
-        <View style={{ alignItems: 'center', width: width - 40, flex: 1 }}>
-          <View
-            style={{
-              flexDirection: 'row',
-              height: 60,
-              width: width - 40,
-              borderRadius: 5,
-              backgroundColor: '#FFF',
-              shadowColor: '#000000',
-              shadowOffset: {
-                width: 3,
-                height: 10
-              },
-              shadowRadius: 5,
-              shadowOpacity: 0.4,
-              elevation: 5,
-              alignItems: 'center'
-            }}
-          >
+        <View style={styles.mainView}>
+          <View style={styles.searchView}>
             <TouchableOpacity>
-              <Image
-                source={require('../../asset/ic_earth.png')}
-                style={{
-                  height: 25,
-                  width: 25,
-                  marginLeft: 15,
-                  marginRight: 5
-                }}
-              />
+              <Image source={require('../../asset/ic_earth.png')} style={styles.imgEarth} />
             </TouchableOpacity>
             <TextInput
               placeholder={'Enter number phone here'}
@@ -145,15 +115,10 @@ export default class SearchView extends Component {
                 this.number = val;
               }}
               underlineColorAndroid="transparent"
-              style={{
-                flex: 1,
-                marginRight: 10,
-                fontSize: 16,
-                color: '#000'
-              }}
+              style={styles.textInput}
             />
           </View>
-          <View style={{ height: 60, flexDirection: 'row' }}>
+          <View style={styles.btnView}>
             <TouchableOpacity
               onPress={() => {
                 if (this.number == '') {
@@ -174,83 +139,24 @@ export default class SearchView extends Component {
                     });
                 }
               }}
-              style={{
-                marginTop: 10,
-                flexDirection: 'row',
-                height: 50,
-                width: 140,
-                borderRadius: 5,
-                backgroundColor: '#D4001B',
-                shadowColor: '#000000',
-                shadowOffset: {
-                  width: 3,
-                  height: 10
-                },
-                shadowRadius: 5,
-                shadowOpacity: 0.4,
-                elevation: 5,
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
+              style={styles.btn}
             >
-              <Text
-                style={{
-                  color: '#FFF',
-                  fontSize: 14,
-                  fontWeight: 'bold'
-                }}
-              >
-                {I18n.t('find')}
-              </Text>
+              <Text style={styles.text}>{I18n.t('find')}</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
                 this.props.navigation.navigate('CallLogScreen');
               }}
-              style={{
-                marginTop: 10,
-                flexDirection: 'row',
-                height: 50,
-                width: 140,
-                marginLeft: 5,
-                borderRadius: 5,
-                backgroundColor: '#D4001B',
-                shadowColor: '#000000',
-                shadowOffset: {
-                  width: 3,
-                  height: 10
-                },
-                shadowRadius: 5,
-                shadowOpacity: 0.4,
-                elevation: 5,
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
+              style={[styles.btn, { marginLeft: 5 }]}
             >
-              <Text
-                style={{
-                  color: '#FFF',
-                  fontSize: 14,
-                  fontWeight: 'bold'
-                }}
-              >
-                {I18n.t('choose')}
-              </Text>
+              <Text style={styles.text}>{I18n.t('choose')}</Text>
             </TouchableOpacity>
           </View>
 
-          <View
-            style={{
-              height: 35,
-              width: width - 40,
-              alignItems: 'flex-end',
-              flexDirection: 'row',
-              marginTop: 5
-            }}
-          >
-            <View style={{ flex: 1 }}>
+          <View style={styles.titleView}>
+            <View style={styles.wrap}>
               <TouchableOpacity>
-                <Text style={{ fontSize: 16, fontWeight: 'bold' }}>{I18n.t('history')}</Text>
+                <Text style={styles.titleText}>{I18n.t('history')}</Text>
               </TouchableOpacity>
             </View>
             <View style={{ flex: 1, alignItems: 'flex-end' }}>
@@ -260,68 +166,35 @@ export default class SearchView extends Component {
                   this.props.store.changeArrHistory([]);
                 }}
               >
-                <Text style={{ fontSize: 16, fontWeight: 'bold' }}>{I18n.t('delete')}</Text>
+                <Text style={styles.titleText}>{I18n.t('delete')}</Text>
               </TouchableOpacity>
             </View>
           </View>
-          <View
-            style={{
-              height: 1,
-              width: width - 40,
-              flexDirection: 'row'
-            }}
-          >
-            <View style={{ flex: 1 }}>
-              <View style={{ width: 20, height: 1, backgroundColor: '#BA4040' }} />
+          <View style={styles.line}>
+            <View style={styles.wrap}>
+              <View style={styles.miniLine} />
             </View>
             <View style={{ flex: 1, alignItems: 'flex-end' }}>
-              <View style={{ width: 20, height: 1, backgroundColor: '#BA4040' }} />
+              <View style={styles.miniLine} />
             </View>
           </View>
           <SectionList
             showsVerticalScrollIndicator={false}
             renderItem={({ item, index, section }) => (
-              <View
-                style={{
-                  flexDirection: 'row',
-                  height: 60,
-                  width: width - 40,
-                  borderRadius: 5,
-                  backgroundColor: '#FFF',
-                  shadowColor: '#000000',
-                  shadowOffset: {
-                    width: 3,
-                    height: 10
-                  },
-                  shadowRadius: 5,
-                  shadowOpacity: 0.4,
-                  elevation: 5,
-                  alignItems: 'center',
-                  marginBottom: 5
-                }}
-                key={index}
-              >
-                <View
-                  style={{
-                    height: 40,
-                    width: 40,
-                    borderRadius: 20,
-                    borderWidth: 1,
-                    borderColor: '#959595',
-                    marginLeft: 15,
-                    marginRight: 15
-                  }}
-                />
-                <View style={{ flex: 1 }}>
-                  <Text style={{ fontSize: 18, color: '#959595' }}>{item.number}</Text>
-                  <Text style={{ fontSize: 16, color: '#959595' }}>{item.name}</Text>
+              <View style={styles.item} key={index}>
+                <View style={styles.avatar} />
+                <View style={styles.wrap}>
+                  <Text style={styles.itemText}>{item.number}</Text>
+                  <Text style={styles.itemText}>{item.name}</Text>
                 </View>
-                <Text style={{ fontSize: 16, color: '#959595', marginRight: 13 }}>{item.time}</Text>
+                <Text style={[styles.itemText, { marginRight: 13 }]}>{item.time}</Text>
                 <View style={{ height: 40, width: 2, backgroundColor: this.rdColor() }} />
               </View>
             )}
             renderSectionHeader={({ section: { title } }) => (
-              <Text style={{ fontWeight: 'bold', marginTop: 5, marginBottom: 5, color: '#858585' }}>{title}</Text>
+              <Text style={styles.sectionHeaderText}>
+                {title == moment(new Date(Date.now())).format('DD/MM/YYYY') ? 'Today' : title}
+              </Text>
             )}
             sections={JSON.parse(data)}
             keyExtractor={(item, index) => item + index}

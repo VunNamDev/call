@@ -23,6 +23,7 @@ import { LocationModule } from '../../libs/Modul';
 import { checkInList } from '../../components/CheckInList';
 import { getCountryCode } from '../../api/Search';
 import I18n from '../../locales/I18n';
+import styles from './styles';
 
 const { width, height } = Dimensions.get('window');
 @inject('store')
@@ -96,37 +97,18 @@ export default class ContactInforView extends Component {
     // alert(JSON.stringify(this.props.navigation.state.params.val));
 
     return (
-      <View style={{ flex: 1, backgroundColor: '#FAFAFA', alignItems: 'center' }}>
-        <View
-          style={{
-            position: 'absolute',
-            width: 3 * width,
-            height: 3 * width,
-            borderRadius: 3 * width,
-            left: -width,
-            backgroundColor: '#D0011B',
-            top: -(3 * width - 140)
-          }}
-        />
-        <View style={{ height: 40, width: width, alignItems: 'center', marginTop: 50 }}>
+      <View style={styles.container}>
+        <View style={styles.positionView} />
+        <View style={styles.inforView}>
           <TouchableOpacity
             onPress={() => {
               this.props.navigation.goBack();
             }}
-            style={{ position: 'absolute', left: 0, bottom: 15 }}
+            style={styles.btnBack}
           >
-            <Image
-              source={require('../../asset/ic_back.png')}
-              style={{
-                height: 20,
-                width: 20,
-                marginLeft: 15,
-                marginTop: 20,
-                marginRight: 5
-              }}
-            />
+            <Image source={require('../../asset/ic_back.png')} style={styles.imgBack} />
           </TouchableOpacity>
-          <Text style={{ color: '#FFF', fontSize: 20, fontWeight: 'bold' }}>{I18n.t('locationChecker')}</Text>
+          <Text style={styles.title}>{I18n.t('locationChecker')}</Text>
         </View>
         <View
           style={{
